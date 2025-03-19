@@ -14,6 +14,9 @@ def cek_snbp(nomor_pendaftaran, hari, bulan, tahun):
         options.add_argument("--no-sandbox")
         options.add_argument("--disable-dev-shm-usage")
 
+        # **Tambahkan path Chromium di Render**
+        options.binary_location = "/usr/bin/chromium-browser"
+
         driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 
         # Masuk ke website SNBP
