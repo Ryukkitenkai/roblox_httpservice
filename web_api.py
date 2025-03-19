@@ -3,9 +3,13 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
-
+import os
 
 app = Flask(__name__)
+
+port = int(os.environ.get("PORT", 5000))
+app.run(host="0.0.0.0", port=port)
+
 
 def cek_snbp(nomor_pendaftaran, hari, bulan, tahun):
     try:
